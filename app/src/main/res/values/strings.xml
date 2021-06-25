@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Flixster</string>
+    <string name="youtube_api_key">AIzaSyAi1xCTzccD2JH69L9wi2YYqiVhf4jWlrc</string>
+    <string name="player_error">Error initializing YouTube player: %s</string>
+    <string name="seek_to">Jump To</string>
+    <string name="seek_to_hint">Seconds</string>
 </resources>

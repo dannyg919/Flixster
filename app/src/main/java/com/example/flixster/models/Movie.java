@@ -16,6 +16,7 @@ public class Movie {
     String title;
     String overview;
     Double voteAverage;
+    int movieId;
 
     String url;
     String posterSize;
@@ -30,9 +31,11 @@ public class Movie {
         title = jsonObject.getString("title");
         overview = jsonObject.getString("overview");
         voteAverage = jsonObject.getDouble("vote_average");
+        movieId = jsonObject.getInt("id");
         url = config.getString("secure_base_url");
         posterSize = config.getJSONArray("poster_sizes").getString(3);
         backdropSize = config.getJSONArray("backdrop_sizes").getString(3);
+
     }
 
 
@@ -66,6 +69,8 @@ public class Movie {
     public Double getVoteAverage() {
         return voteAverage;
     }
+
+    public int getMovieId() { return movieId; }
 
 
 }

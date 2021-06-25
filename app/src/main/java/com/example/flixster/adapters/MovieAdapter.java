@@ -70,14 +70,15 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         TextView tvOverview;
         ImageView ivPoster;
 
+
         public ViewHolder(@NonNull  View itemView) {
             super(itemView);
 
             tvTitle = itemView.findViewById(R.id.tvTitle);
             tvOverview = itemView.findViewById(R.id.tvOverview);
             ivPoster = itemView.findViewById(R.id.ivPoster);
-
             itemView.setOnClickListener(this);
+
 
         }
 

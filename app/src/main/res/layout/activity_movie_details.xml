@@ -59,14 +59,4 @@
         android:scaleType="fitXY"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <Button
-        android:id="@+id/btnBack"
-        style="@style/Widget.AppCompat.Button.Small"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        app:icon="@drawable/abc_vector_test" />
 </RelativeLayout>
