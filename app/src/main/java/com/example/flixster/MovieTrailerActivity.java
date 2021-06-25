@@ -28,6 +28,7 @@ public class MovieTrailerActivity extends YouTubeBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_trailer);
 
+
         int movieId = getIntent().getIntExtra("KEY", 0);
         Log.d("hello", String.valueOf(movieId));
 
@@ -79,6 +80,7 @@ public class MovieTrailerActivity extends YouTubeBaseActivity {
                 // do any work here to cue video, play video, etc.
                 Log.d("hello", videoId);
                 youTubePlayer.cueVideo(videoId);
+
 
             }
 

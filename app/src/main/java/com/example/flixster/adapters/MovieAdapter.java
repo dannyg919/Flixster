@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.flixster.MovieDetailsActivity;
+import com.example.flixster.MovieTrailerActivity;
 import com.example.flixster.R;
 import com.example.flixster.models.Movie;
 
@@ -83,8 +84,20 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         }
 
         public void bind(Movie movie) throws JSONException {
+            //Title
             tvTitle.setText(movie.getTitle());
-            tvOverview.setText(movie.getOverview());
+
+            //Overview
+            String overview;
+            if (movie.getOverview().length() > 300){
+                overview = movie.getOverview().substring(0,300) + "...";
+            } else{
+                overview = movie.getOverview();
+            }
+
+            tvOverview.setText(overview);
+
+            //Image
             String imageUrl;
 
             if(context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
@@ -95,15 +108,33 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
                 imageUrl = movie.getPosterPath();
             }
 
-
             Glide.with(context)
                     .load(imageUrl)
                     .placeholder(R.drawable.flicks_movie_placeholder)
-                    .transform(new RoundedCornersTransformation(10, 30))
+                    .transform(new RoundedCornersTransformation(15, 10))
                     .override(200,300)
                     .into(ivPoster);
+
+            //IF LANDSCAPE THEN WE CAN PLAY VIDEOS DIRECTLY FROM SCROLL
+            if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+
+
+                ivPoster.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        Intent i = new Intent(context, MovieTrailerActivity.class);
+
+                        i.putExtra("KEY", movie.getMovieId());
+
+                        context.startActivity(i);
+                    }
+                });
+            }
+
         }
 
+        //Item OnClick
         @Override
         public void onClick(View v) {
             int position = getAdapterPosition();

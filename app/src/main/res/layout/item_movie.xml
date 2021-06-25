@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/main"
     android:layout_height="wrap_content">
 
     <ImageView
@@ -23,8 +24,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginStart="6dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:layout_toEndOf="@+id/ivPoster"
+        android:fontFamily="@font/gotham_bold"
+        android:textColor="@color/quad"
         android:textSize="24sp"
         tools:text="A Quiet Place Part II" />
 
@@ -36,5 +39,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@+id/ivPoster"
+        android:fontFamily="@font/gotham_book_italic"
+        android:textColor="@color/quad"
         tools:text="Following the events at home, the Abbott family now face the terrors of the outside world. Forced to venture into the unknown, they realize that the creatures that hunt by sound are not the only threats that lurk beyond the sand path." />
 </RelativeLayout>
